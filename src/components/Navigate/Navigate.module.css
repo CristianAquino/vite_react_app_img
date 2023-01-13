@@ -1,0 +1,19 @@
+.navigate {
+  background-color: var(--navbar);
+  height: 64px;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.iconBars {
+  color: var(--icon);
+  font-size: 32px;
+}
+
+@media (min-width: 430px) {
+  .iconBars {
+    display: none;
+  }
+}
