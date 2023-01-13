@@ -1,0 +1,16 @@
+import style from "./Folder.module.css";
+
+const Image = ({ children, dimension }) => {
+  return (
+    <div className={style.imageContainer} style={{ ...dimension }}>
+      <img
+        src="https://i.postimg.cc/ryvSF2Z1/Gakkou-Gurashi.jpg"
+        alt="a"
+        className={style.image}
+      />
+      {children}
+    </div>
+  );
+};
+
+export default Image;
