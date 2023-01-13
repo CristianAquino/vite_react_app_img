@@ -1,0 +1,17 @@
+.principal {
+  min-height: 100vh;
+  background-color: var(--secondary);
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.home h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--title);
+}
