@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
 }
 .titleSignIn {
   color: var(--title);
@@ -27,12 +28,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 32px;
+  width: 100%;
 }
 .formSingIn {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 .formSingIn div {
   display: flex;
@@ -100,4 +104,25 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
+}
+.google {
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--icon);
+  font-size: 24px;
+  padding: 8px 20px;
+}
+.google span {
+  font-size: 12px;
+  font-weight: 400;
+}
+.option {
+  color: var(--icon);
+  font-weight: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
