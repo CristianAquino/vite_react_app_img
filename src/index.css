@@ -8,7 +8,7 @@
 }
 :root {
   --primary: #007bff;
-  --secondary: rgba(30, 30, 30, 0.9);
+  --secondary: rgba(204, 204, 204, 0.05);
   --title: #f1eced;
   --description: #bbb;
   --border: #6c757d;
@@ -18,4 +18,5 @@
   --new: #ff6e31;
   --end: #dc0000;
   --stars: #fce700;
+  --ranking: rgba(204, 204, 204, 0.2);
 }
