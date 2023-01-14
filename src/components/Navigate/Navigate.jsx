@@ -1,23 +1,20 @@
-import styles from "./Navigate.module.css";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-
-// components
-import Logo from "../Logo/Logo";
-
-// states
-import { useState } from "react";
+import style from "./Navigate.module.css";
+import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 const Navigate = () => {
-  const [menuBar, setMenuBar] = useState(false);
-
-  const handleChangeIconMenu = () => {
-    setMenuBar(!menuBar);
-  };
   return (
-    <div className={styles.navigate}>
-      <Logo />
-      <div onClick={handleChangeIconMenu} className={styles.iconBars}>
-        {menuBar ? <AiOutlineClose /> : <AiOutlineMenu />}
+    <div className={style.navigate}>
+      <div>
+        <AiOutlineLeft />
+      </div>
+      <div className={style.active}>1</div>
+      <div>2</div>
+      <div>3</div>
+      <span>...</span>
+      <div>5</div>
+      <div>Fin</div>
+      <div>
+        <AiOutlineRight />
       </div>
     </div>
   );
