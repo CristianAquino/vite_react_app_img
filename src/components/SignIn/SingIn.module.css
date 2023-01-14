@@ -1,0 +1,103 @@
+.signIn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+}
+.headSingIn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.titleSignIn {
+  color: var(--title);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.goHome a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--icon);
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.bodySignIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+.formSingIn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.formSingIn div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+.formSingIn div .inputEmailSingIn svg,
+.formSingIn div .inputPassSingIn > svg:first-child {
+  position: absolute;
+  color: var(--icon);
+  font-size: 32px;
+  padding: 4px;
+  left: 0;
+}
+.formSingIn div .inputPassSingIn > svg:last-child {
+  position: absolute;
+  color: var(--icon);
+  font-size: 32px;
+  padding: 4px;
+  right: 0;
+}
+.formSingIn div span {
+  color: var(--description);
+  font-size: 16px;
+  font-weight: bold;
+}
+.formSingIn div input {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 40px;
+  color: var(--description);
+}
+.formSingIn div input::placeholder {
+  color: var(--description);
+  font-size: 12px;
+  font-weight: 400;
+}
+.formSingIn .buttonSingIn {
+  height: 32px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 16px;
+  text-transform: capitalize;
+  color: var(--title);
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+.footerSingIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.footerSingIn span a {
+  text-decoration: none;
+  color: var(--title);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
