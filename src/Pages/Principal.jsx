@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Navigate from "../components/Navigate/Navigate";
+import NavBar from "../components/NavBar/NavBar";
 import styles from "./Principal.module.css";
 
 const Principal = () => {
   return (
     <div className={styles.principal}>
-      <Navigate />
+      <NavBar />
       <Outlet />
     </div>
   );
