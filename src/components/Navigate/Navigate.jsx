@@ -4,16 +4,20 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 const Navigate = () => {
   return (
     <div className={style.navigate}>
-      <div>
+      <div className={style.navigate__tag}>
         <AiOutlineLeft />
       </div>
-      <div className={style.active}>1</div>
-      <div>2</div>
-      <div>3</div>
-      <span>...</span>
-      <div>5</div>
-      <div>Fin</div>
-      <div>
+      <div className={`${style.navigate__tag} ${style.navigate__active}`}>
+        1
+      </div>
+      <div className={style.navigate__tag}>2</div>
+      <div className={style.navigate__tag}>3</div>
+      <span className={style.navigate__more}>...</span>
+      <div className={style.navigate__tag}>5</div>
+      <div className={`${style.navigate__tag} ${style.navigate__tag__end}`}>
+        Fin
+      </div>
+      <div className={style.navigate__tag}>
         <AiOutlineRight />
       </div>
     </div>

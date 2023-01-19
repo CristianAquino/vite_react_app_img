@@ -4,7 +4,7 @@ import styles from "./Principal.module.css";
 
 const Principal = () => {
   return (
-    <div className={styles.principal}>
+    <div className={styles.container}>
       <NavBar />
       <Outlet />
     </div>

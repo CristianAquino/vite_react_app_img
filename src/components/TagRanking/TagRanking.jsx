@@ -11,16 +11,16 @@ const TagRanking = () => {
   };
   return (
     <div className={style.tagRanking}>
-      <p className={style.number}>#1</p>
+      <p className={style.tagRanking__number}>#1</p>
       <Image dimension={sizeImage} />
-      <div className={style.rankingData}>
-        <p>
+      <div className={style.tagRankingData}>
+        <p className={style.tagRankingData__title}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
           quidem maiores itaque, adipisci sit veritatis!
         </p>
-        <div className={style.view}>
+        <div className={style.tagRankingData__view}>
           <AiOutlineEye />
-          <span>123456 View</span>
+          <span className={style.tagRankingData__number}>123456 View</span>
         </div>
       </div>
     </div>

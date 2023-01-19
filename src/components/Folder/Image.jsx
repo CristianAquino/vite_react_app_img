@@ -6,7 +6,7 @@ const Image = ({ children, dimension }) => {
       <img
         src="https://i.postimg.cc/ryvSF2Z1/Gakkou-Gurashi.jpg"
         alt="a"
-        className={style.image}
+        className={style.imageContainer__image}
       />
       {children}
     </div>

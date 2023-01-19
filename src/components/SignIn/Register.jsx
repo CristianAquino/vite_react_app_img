@@ -21,72 +21,105 @@ export const Register = () => {
   };
 
   return (
-    <div className={style.signIn}>
-      <div className={style.headSingIn}>
-        <span className={style.titleSignIn}>registro</span>
-        <span className={style.goHome}>
-          <Link to={"/"}>ir al inicio</Link>
+    <div className={style.sesion}>
+      <div className={style.sesion__head}>
+        <span className={style.sesion__title}>registro</span>
+        <span className={style.sesion__home}>
+          <Link className={style.sesion__home__link} to={"/"}>
+            ir al inicio
+          </Link>
         </span>
       </div>
-      <div className={style.bodySignIn}>
+      <div className={style.sesion__body}>
         <Logo />
-        <div className={style.google}>
+        <div className={style.signGoogle}>
           <FcGoogle />
-          <span>Sign up with Google</span>
+          <span className={style.signGoogle__text}>Sign up with Google</span>
         </div>
-        <span className={style.option}>- or -</span>
-
-        <form className={style.formSingIn} onSubmit={handleSubmit}>
-          <div>
-            <span>Escriba su usuario</span>
-            <div className={style.inputEmailSingIn}>
-              <BiUser />
-              <input type="text" placeholder="username" />
+        <span className={style.sesion__or}>- or -</span>
+        <form className={style.form} onSubmit={handleSubmit}>
+          <div className={style.form__container}>
+            <span className={style.form__label}>Escriba su usuario</span>
+            <div className={style.form__containerInput}>
+              <BiUser
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
+              <input
+                type="text"
+                placeholder="username"
+                className={style.form__input}
+              />
             </div>
           </div>
-          <div>
-            <span>Ingrese su email</span>
-            <div className={style.inputEmailSingIn}>
-              <BiEnvelope />
-              <input type="text" placeholder="jhondoe@example.com" />
+          <div className={style.form__container}>
+            <span className={style.form__label}>Ingrese su email</span>
+            <div className={style.form__containerInput}>
+              <BiEnvelope
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
+              <input
+                type="text"
+                placeholder="jhondoe@example.com"
+                className={style.form__input}
+              />
             </div>
           </div>
-          <div>
-            <span>Ingrese su contraseña</span>
-            <div className={style.inputPassSingIn}>
-              <BiLock />
+          <div className={style.form__container}>
+            <span className={style.form__label}>Ingrese su contraseña</span>
+            <div className={style.form__containerInput}>
+              <BiLock
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
               <input
                 type={lock ? "text" : "password"}
                 placeholder="********************"
+                className={style.form__input}
               />
               {lock ? (
-                <BiShow onClick={handleLock} />
+                <BiShow
+                  onClick={handleLock}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               ) : (
-                <BiHide onClick={handleLock} />
+                <BiHide
+                  onClick={handleLock}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               )}
             </div>
           </div>
-          <div>
-            <span>Confirme su contraseña</span>
-            <div className={style.inputPassSingIn}>
-              <BiLock />
+          <div className={style.form__container}>
+            <span className={style.form__label}>Confirme su contraseña</span>
+            <div className={style.form__containerInput}>
+              <BiLock
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
               <input
                 type={confirm ? "text" : "password"}
                 placeholder="********************"
+                className={style.form__input}
               />
               {confirm ? (
-                <BiShow onClick={handleConfirm} />
+                <BiShow
+                  onClick={handleConfirm}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               ) : (
-                <BiHide onClick={handleConfirm} />
+                <BiHide
+                  onClick={handleConfirm}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               )}
             </div>
           </div>
-          <button className={style.buttonSingIn}>registrarse</button>
+          <button className={style.form__button}>registrarse</button>
         </form>
       </div>
-      <div className={style.footerSingIn}>
-        <span>
-          <Link to={"/"}>¿Ya tienes una cuenta? Ingresa ahora.</Link>
+      <div className={style.sesion__footer}>
+        <span className={style.sesion__footer__text}>
+          <Link className={style.sesion__footer__text__link} to={"/"}>
+            ¿Ya tienes una cuenta? Ingresa ahora.
+          </Link>
         </span>
       </div>
     </div>

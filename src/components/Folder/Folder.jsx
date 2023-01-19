@@ -18,18 +18,19 @@ const Folder = () => {
   const handleState = (dato) => {
     const { f, e } = dato;
     if ((e !== "end") & (hoy <= pub)) {
-      return <p>New</p>;
+      return <p className={style.imageContainer__msg}>New</p>;
     } else if (e === "end") {
-      return <p>Completo</p>;
+      return <p className={style.imageContainer__msg}>Completo</p>;
     }
   };
+
   return (
     <Image>
-      <p className={style.chapter}>Chapter 101</p>
+      <p className={style.imageContainer__chapter}>Chapter 101</p>
       <div
-        className={`${style.state} ${hoy <= pub ? style.new : ""} ${
-          dato.e === "end" ? style.end : ""
-        }`}
+        className={`${style.imageContainer__state} ${
+          hoy <= pub ? style.imageContainer__new : ""
+        } ${dato.e === "end" ? style.imageContainer__end : ""}`}
       >
         {/* {hoy <= pub ? <p>New</p> : <p>Completo</p>} */}
         {handleState(dato)}

@@ -12,10 +12,12 @@ const FolderData = () => {
       f: "11/01/2022",
     },
   ];
+
   const hoy = new Date().getDate();
+
   return (
     <div className={style.folderData}>
-      <p className={style.title}>
+      <p className={style.folderData__title}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
         ratione.
       </p>
@@ -23,8 +25,8 @@ const FolderData = () => {
         const pub = chapter.f.split("/")[0];
         return (
           <div className={style.ch} key={chapter.id}>
-            <p className={style.first}>{chapter.ch}</p>
-            <p className={hoy <= pub ? style.second : style.date}>
+            <p className={style["ch--first"]}>{chapter.ch}</p>
+            <p className={hoy <= pub ? style["ch--second"] : style["ch--date"]}>
               {hoy <= pub ? "New" : chapter.f}
             </p>
           </div>

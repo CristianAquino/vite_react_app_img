@@ -16,47 +16,68 @@ export const SingIn = () => {
   };
 
   return (
-    <div className={style.signIn}>
-      <div className={style.headSingIn}>
-        <span className={style.titleSignIn}>iniciar sesion</span>
-        <span className={style.goHome}>
-          <Link to={"/"}>ir al inicio</Link>
+    <div className={style.sesion}>
+      <div className={style.sesion__head}>
+        <span className={style.sesion__title}>iniciar sesion</span>
+        <span className={style.sesion__home}>
+          <Link className={style.sesion__home__link} to={"/"}>
+            ir al inicio
+          </Link>
         </span>
       </div>
-      <div className={style.bodySignIn}>
+      <div className={style.sesion__body}>
         <Logo />
-        <form className={style.formSingIn} onSubmit={handleSubmit}>
-          <div>
-            <span>Ingrese su email</span>
-            <div className={style.inputEmailSingIn}>
-              <BiEnvelope />
-              <input type="text" placeholder="jhondoe@example.com" />
+        <form className={style.form} onSubmit={handleSubmit}>
+          <div className={style.form__container}>
+            <span className={style.form__label}>Ingrese su email</span>
+            <div className={style.form__containerInput}>
+              <BiEnvelope
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
+              <input
+                type="text"
+                placeholder="jhondoe@example.com"
+                className={style.form__input}
+              />
             </div>
           </div>
-          <div>
-            <span>Ingrese su contraseña</span>
+          <div className={style.form__container}>
+            <span className={style.form__label}>Ingrese su contraseña</span>
             <div className={style.inputPassSingIn}>
-              <BiLock />
+              <BiLock
+                className={`${style.form__icon} ${style["form__icon-left"]}`}
+              />
               <input
                 type={lock ? "text" : "password"}
                 placeholder="********************"
+                className={style.form__input}
               />
               {lock ? (
-                <BiShow onClick={handleLock} />
+                <BiShow
+                  onClick={handleLock}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               ) : (
-                <BiHide onClick={handleLock} />
+                <BiHide
+                  onClick={handleLock}
+                  className={`${style.form__icon} ${style["form__icon-right"]}`}
+                />
               )}
             </div>
           </div>
-          <button className={style.buttonSingIn}>iniciar sesion</button>
+          <button className={style.form__button}>iniciar sesion</button>
         </form>
       </div>
-      <div className={style.footerSingIn}>
-        <span>
-          <Link to={"/"}>¿Olvidaste tu contraseña?</Link>
+      <div className={style.sesion__footer}>
+        <span className={style.sesion__footer__text}>
+          <Link className={style.sesion__footer__text__link} to={"/"}>
+            ¿Olvidaste tu contraseña?
+          </Link>
         </span>
-        <span>
-          <Link to={"/"}>¿No tienes una cuenta? Cree una ahora.</Link>
+        <span className={style.sesion__footer__text}>
+          <Link className={style.sesion__footer__text__link} to={"/"}>
+            ¿No tienes una cuenta? Cree una ahora.
+          </Link>
         </span>
       </div>
     </div>

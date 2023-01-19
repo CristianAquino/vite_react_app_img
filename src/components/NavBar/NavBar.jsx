@@ -1,4 +1,4 @@
-import styles from "./NavBar.module.css";
+import style from "./NavBar.module.css";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Logo from "../Logo/Logo";
 import Menu from "../Menu/Menu";
@@ -17,13 +17,13 @@ const NavBar = () => {
 
   return (
     <>
-      <div className={styles.navBar}>
+      <div className={style.navBar}>
         <Logo />
-        <div onClick={handleChangeIconMenu} className={styles.iconBars}>
+        <div onClick={handleChangeIconMenu} className={style.icon}>
           {isOpenMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
         </div>
       </div>
-      <Menu open={isOpenMenu} />
+      <Menu open={isOpenMenu} close={closeMenu} />
     </>
   );
 };
