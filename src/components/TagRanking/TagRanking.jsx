@@ -5,8 +5,8 @@ import { AiOutlineEye } from "react-icons/ai";
 
 const TagRanking = () => {
   const sizeImage = {
-    height: "100%",
-    width: "87px",
+    //   height: "100%",
+    //   width: "87px",
     borderRadius: "4px",
   };
   return (
