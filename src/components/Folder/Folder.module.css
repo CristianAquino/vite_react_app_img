@@ -6,7 +6,7 @@
   overflow: hidden;
   filter: saturate(1.5);
 }
-.image {
+.imageContainer__image {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   object-position: center;
   object-fit: cover;
 }
-.chapter {
+.imageContainer__chapter {
   position: absolute;
   right: 8px;
   bottom: 8px;
@@ -26,7 +26,7 @@
   color: var(--title);
   border-radius: 8px;
 }
-.state {
+.imageContainer__state {
   position: absolute;
   left: 0;
   top: 0;
@@ -36,19 +36,19 @@
   align-items: center;
   justify-content: center;
 }
-.new {
+.imageContainer__new {
   border-top: 24px solid var(--new);
   border-right: 24px solid transparent;
   border-bottom: 24px solid transparent;
   border-left: 24px solid var(--new);
 }
-.end {
+.imageContainer__end {
   border-top: 24px solid var(--end);
   border-right: 24px solid transparent;
   border-bottom: 24px solid transparent;
   border-left: 24px solid var(--end);
 }
-.state p {
+.imageContainer__msg {
   position: absolute;
   font-size: 8px;
   transform: rotate(-45deg) translate(0%, -100%);

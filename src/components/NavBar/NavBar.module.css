@@ -1,19 +1,23 @@
 .navBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--navbar);
   height: 64px;
   width: 100%;
   padding: 16px;
+}
+.icon {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-.iconBars {
-  color: var(--icon);
+  justify-content: center;
   font-size: 32px;
+  color: var(--icon);
 }
 
 @media (min-width: 430px) {
-  .iconBars {
+  .icon {
     display: none;
   }
 }

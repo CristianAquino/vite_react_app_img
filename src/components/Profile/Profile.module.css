@@ -2,7 +2,7 @@
   position: relative;
   cursor: pointer;
 }
-.changeImage p {
+.changeImage__iconContainer {
   position: absolute;
   width: 36px;
   height: 36px;
@@ -14,7 +14,7 @@
   bottom: 12px;
   right: 12px;
 }
-.changeImage svg {
+.icon {
   color: var(--description);
   font-size: 24px;
 }

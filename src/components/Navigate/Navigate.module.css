@@ -3,8 +3,9 @@
   align-items: center;
   justify-content: center;
   padding: 16px 0;
+  width: 100%;
 }
-.navigate div {
+.navigate__tag {
   width: 32px;
   height: 32px;
   display: flex;
@@ -16,7 +17,7 @@
   border-radius: 8px;
   border: 1px solid var(--border);
 }
-.navigate span {
+.navigate__more {
   width: 32px;
   height: 32px;
   display: flex;
@@ -27,15 +28,15 @@
   font-weight: 400;
   letter-spacing: 4px;
 }
-.navigate div:nth-child(7) {
+.navigate__tag__end {
   text-transform: uppercase;
 }
-.navigate div:hover {
+.navigate__tag:hover {
   border: 0;
   background-color: var(--end);
   cursor: pointer;
 }
-.navigate div.active {
+.navigate__active {
   border: 0;
   background-color: var(--end);
 }

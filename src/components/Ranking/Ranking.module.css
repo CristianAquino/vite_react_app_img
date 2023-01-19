@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  width: 100%;
 }
-.top {
+.ranking__header {
   font-size: 14px;
   font-weight: 400;
   color: var(--icon);
@@ -16,7 +17,7 @@
   gap: 1px;
   overflow: hidden;
 }
-.top1 {
+.ranking__section {
   width: 100%;
   height: 100%;
   display: flex;
@@ -24,6 +25,6 @@
   justify-content: center;
   background-color: var(--ranking);
 }
-.active {
+.ranking__active {
   background-color: var(--end);
 }

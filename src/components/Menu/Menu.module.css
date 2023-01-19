@@ -1,5 +1,5 @@
 .menu {
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 16px;
   display: flex;
@@ -12,7 +12,7 @@
   z-index: 2;
   transition: 0.5s ease-in-out;
 }
-.menu input {
+.menu__input {
   background-color: transparent;
   outline: none;
   border: 1px solid var(--border);
@@ -22,22 +22,29 @@
   padding: 8px;
   color: var(--description);
 }
-.menu input::placeholder {
+.menu__input::placeholder {
   color: var(--description);
   font-size: 12px;
   font-weight: 400;
 }
-.menu .listMenu {
-  list-style: none;
+.list {
   display: flex;
   flex-direction: column;
   gap: 32px;
   justify-content: flex-start;
-  color: var(--description);
+}
+.list__item {
+  list-style: none;
+}
+.list__item__link {
+  text-decoration: none;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
+  color: var(--description);
+  width: 100%;
+  display: inline-block;
 }
-.menuActive {
+.menu--active {
   left: 0;
 }

@@ -1,30 +1,34 @@
-.signIn {
+.sesion {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 16px;
+  min-height: 100vh;
+  width: 100%;
 }
-.headSingIn {
+.sesion__head {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
 }
-.titleSignIn {
+.sesion__title {
   color: var(--title);
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
 }
-.goHome a {
+.sesion__home {
   font-size: 12px;
   font-weight: 400;
-  color: var(--icon);
   cursor: pointer;
+}
+.sesion__home__link {
   text-decoration: none;
   text-transform: capitalize;
+  color: var(--icon);
 }
-.bodySignIn {
+.sesion__body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,39 +36,40 @@
   gap: 32px;
   width: 100%;
 }
-.formSingIn {
+.form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
-.formSingIn div {
+.form__container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   position: relative;
+  gap: 16px;
+  width: 100%;
 }
-.formSingIn div .inputEmailSingIn svg,
-.formSingIn div .inputPassSingIn > svg:first-child {
+.form__containerInput {
+  width: 100%;
+}
+.form__icon {
   position: absolute;
   color: var(--icon);
   font-size: 32px;
   padding: 4px;
+}
+.form__icon-left {
   left: 0;
 }
-.formSingIn div .inputPassSingIn > svg:last-child {
-  position: absolute;
-  color: var(--icon);
-  font-size: 32px;
-  padding: 4px;
+.form__icon-right {
   right: 0;
 }
-.formSingIn div span {
+.form__label {
   color: var(--description);
   font-size: 16px;
   font-weight: bold;
 }
-.formSingIn div input {
+.form__input {
   background-color: transparent;
   outline: none;
   border: 1px solid var(--border);
@@ -72,13 +77,14 @@
   height: 32px;
   padding: 0 40px;
   color: var(--description);
+  width: 100%;
 }
-.formSingIn div input::placeholder {
+.form__input::placeholder {
   color: var(--description);
   font-size: 12px;
   font-weight: 400;
 }
-.formSingIn .buttonSingIn {
+.form__button {
   height: 32px;
   width: 100%;
   border-radius: 4px;
@@ -91,21 +97,24 @@
   border: none;
   cursor: pointer;
 }
-.footerSingIn {
+.sesion__footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
+  width: 100%;
 }
-.footerSingIn span a {
-  text-decoration: none;
-  color: var(--title);
+.sesion__footer__text {
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
 }
-.google {
+.sesion__footer__text__link {
+  text-decoration: none;
+  color: var(--title);
+}
+.signGoogle {
   height: 48px;
   border-radius: 8px;
   display: flex;
@@ -116,11 +125,11 @@
   font-size: 24px;
   padding: 8px 20px;
 }
-.google span {
+.signGoogle__text {
   font-size: 12px;
   font-weight: 400;
 }
-.option {
+.sesion__or {
   color: var(--icon);
   font-weight: 24px;
   font-weight: bold;
