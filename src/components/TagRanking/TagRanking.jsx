@@ -1,4 +1,4 @@
-import Image from "../Folder/Image";
+import Image from "../CardImage/Image";
 import style from "./TagRanking.module.css";
 
 import { AiOutlineEye } from "react-icons/ai";
