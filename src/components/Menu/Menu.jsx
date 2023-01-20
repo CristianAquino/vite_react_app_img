@@ -20,7 +20,11 @@ const Menu = ({ open, close }) => {
           </Link>
         </li>
         <li className={style.list__item}>
-          <Link onClick={close} to="login" className={style.list__item__link}>
+          <Link
+            onClick={close}
+            to="register"
+            className={style.list__item__link}
+          >
             Registrarse
           </Link>
         </li>
