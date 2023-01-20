@@ -1,4 +1,4 @@
-import style from "./Folder.module.css";
+import style from "./CardImage.module.css";
 
 const Image = ({ children, dimension }) => {
   return (
