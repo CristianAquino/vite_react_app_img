@@ -1,4 +1,4 @@
-.folderData {
+.cardData {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -6,7 +6,7 @@
   width: 191px;
   height: 120px;
 }
-.folderData__title {
+.cardData__title {
   color: var(--title);
   font-size: 16px;
   font-weight: bold;
