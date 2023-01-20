@@ -1,5 +1,6 @@
-import style from "./FolderData.module.css";
-const FolderData = () => {
+import style from "./CardData.module.css";
+
+const CardData = () => {
   const chapters = [
     {
       id: 1,
@@ -16,8 +17,8 @@ const FolderData = () => {
   const hoy = new Date().getDate();
 
   return (
-    <div className={style.folderData}>
-      <p className={style.folderData__title}>
+    <div className={style.cardData}>
+      <p className={style.cardData__title}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
         ratione.
       </p>
@@ -44,4 +45,4 @@ const FolderData = () => {
   );
 };
 
-export default FolderData;
+export default CardData;
