@@ -1,3 +1,7 @@
-const baseUrl = "api1node-production.up.railway.app/api/";
+import axios from "axios";
 
-export default baseUrl;
+const instance = axios.create({
+  baseURL: "https://api1node-production.up.railway.app/api/",
+});
+
+export default instance;
