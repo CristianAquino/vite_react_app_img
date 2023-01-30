@@ -3,18 +3,11 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import { BiLock, BiEnvelope, BiShow, BiHide, BiUser } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
+import { useChangeIcon } from "../../hooks/useChangeIcon";
 
 export const Register = () => {
-  const [lock, setLock] = useState(false);
-  const [confirm, setConfirm] = useState(false);
-
-  const handleLock = () => {
-    setLock(!lock);
-  };
-  const handleConfirm = () => {
-    setConfirm(!confirm);
-  };
+  const [lockPassword, setLockPassword] = useChangeIcon();
+  const [lockConfirmPassword, setLockConfirmPassword] = useChangeIcon();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +30,7 @@ export const Register = () => {
           <span className={style.signGoogle__text}>Sign up with Google</span>
         </div>
         <span className={style.sesion__or}>- or -</span>
-        <form className={style.form} onSubmit={handleSubmit}>
+        <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={style.form__container}>
             <span className={style.form__label}>Escriba su usuario</span>
             <div className={style.form__containerInput}>
@@ -71,18 +64,18 @@ export const Register = () => {
                 className={`${style.form__icon} ${style["form__icon-left"]}`}
               />
               <input
-                type={lock ? "text" : "password"}
+                type={lockPassword ? "text" : "password"}
                 placeholder="********************"
                 className={style.form__input}
               />
-              {lock ? (
+              {lockPassword ? (
                 <BiShow
-                  onClick={handleLock}
+                  onClick={setLockPassword}
                   className={`${style.form__icon} ${style["form__icon-right"]}`}
                 />
               ) : (
                 <BiHide
-                  onClick={handleLock}
+                  onClick={setLockPassword}
                   className={`${style.form__icon} ${style["form__icon-right"]}`}
                 />
               )}
@@ -95,18 +88,18 @@ export const Register = () => {
                 className={`${style.form__icon} ${style["form__icon-left"]}`}
               />
               <input
-                type={confirm ? "text" : "password"}
+                type={lockConfirmPassword ? "text" : "password"}
                 placeholder="********************"
                 className={style.form__input}
               />
-              {confirm ? (
+              {lockConfirmPassword ? (
                 <BiShow
-                  onClick={handleConfirm}
+                  onClick={setLockConfirmPassword}
                   className={`${style.form__icon} ${style["form__icon-right"]}`}
                 />
               ) : (
                 <BiHide
-                  onClick={handleConfirm}
+                  onClick={setLockConfirmPassword}
                   className={`${style.form__icon} ${style["form__icon-right"]}`}
                 />
               )}
@@ -117,7 +110,7 @@ export const Register = () => {
       </div>
       <div className={style.sesion__footer}>
         <span className={style.sesion__footer__text}>
-          <Link className={style.sesion__footer__text__link} to={"/"}>
+          <Link className={style.sesion__footer__text__link} to={"/login"}>
             ¿Ya tienes una cuenta? Ingresa ahora.
           </Link>
         </span>
