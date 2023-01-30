@@ -6,9 +6,20 @@ export const authSlice = createSlice({
     token: JSON.parse(sessionStorage.getItem("token")),
     loading: false,
     error: false,
+    isLogged: Boolean(JSON.parse(sessionStorage.getItem("token"))),
     // user: JSON.parse(sessionStorage.getItem("user")),
   },
   reducers: {
+    loginSuccess: (state, action) => {
+      sessionStorage.setItem("token", JSON.stringify(action.payload.token));
+      return {
+        ...state,
+        token: action.payload.token,
+        loading: false,
+        error: false,
+        isLogged: true,
+      };
+    },
     // registerSuccess: (state, action) => {
     //   const nuevo = action.payload;
     //   sessionStorage.setItem("user", JSON.stringify(nuevo));
@@ -19,15 +30,7 @@ export const authSlice = createSlice({
     //     error: false,
     //   };
     // },
-    loginSuccess: (state, action) => {
-      sessionStorage.setItem("token", JSON.stringify(action.payload));
-      return {
-        ...state,
-        token: action.payload,
-        loading: false,
-        error: false,
-      };
-    },
+
     // updateData: (state, action) => {
     //   const nuevo = action.payload;
     //   const a = { ...state.user, ...nuevo };
@@ -41,8 +44,11 @@ export const authSlice = createSlice({
       sessionStorage.clear();
       return {
         ...state,
-        user: null,
         token: null,
+        loading: false,
+        error: false,
+        isLogged: false,
+        // user: null,
       };
     },
   },
