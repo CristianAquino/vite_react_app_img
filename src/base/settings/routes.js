@@ -1,5 +1,7 @@
 const routes = {
   HOME: "/",
+  CREATEFOLDER: "createfolder",
+  DASHBOARD: "dashboard",
   FOLDER: "folder",
   LOGIN: "login",
   PROFILE: "profile",
