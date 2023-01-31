@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
-import styles from "./Principal.module.css";
+import style from "./Principal.module.css";
 
 const Principal = () => {
   return (
-    <div className={styles.container}>
+    <div className={style.container}>
       <NavBar />
-      <Outlet />
+      <div className={style.container__main}>
+        <Outlet />
+      </div>
     </div>
   );
 };

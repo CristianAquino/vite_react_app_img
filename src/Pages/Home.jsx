@@ -6,10 +6,10 @@ import style from "./Principal.module.css";
 const Home = () => {
   return (
     <div className={style.home}>
-      <h1 className={style.home__h1}>Recientes</h1>
+      <h1 className="tag24bold">Recientes</h1>
       <Cards />
       <Navigate />
-      <h1 className={style.home__h1}>Ranking</h1>
+      <h1 className="tag24bold">Ranking</h1>
       <Ranking />
     </div>
   );
