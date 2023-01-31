@@ -21,3 +21,61 @@
   --going: #54b435;
   --ranking: #414141;
 }
+/* font */
+.tag24bold {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--title);
+}
+.tag12regular {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.tag16bold {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--description);
+}
+.form__button {
+  height: 32px;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 16px;
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+.boton14medium {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--title);
+}
+/* input */
+.form__input {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 40px;
+  color: var(--description);
+  width: 100%;
+}
+.form__input::placeholder {
+  color: var(--description);
+  font-size: 12px;
+  font-weight: 400;
+}
+/* icon */
+.icon {
+  color: var(--icon);
+  font-size: 32px;
+}
+.link {
+  text-decoration: none;
+  color: var(--icon);
+}
