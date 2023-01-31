@@ -1,8 +1,8 @@
 .sesion {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
-  padding: 16px;
   min-height: 100vh;
   width: 100%;
 }
@@ -12,28 +12,7 @@
   align-items: flex-end;
   width: 100%;
 }
-.sesion__title {
-  color: var(--title);
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.sesion__home {
-  font-size: 12px;
-  font-weight: 400;
-  cursor: pointer;
-}
-.sesion__home__link {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: var(--icon);
-}
 .sesion__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
   width: 100%;
 }
 .form {
@@ -52,50 +31,16 @@
 .form__containerInput {
   width: 100%;
 }
-.form__icon {
+.icon {
   position: absolute;
-  color: var(--icon);
-  font-size: 32px;
   padding: 4px;
+  bottom: 0;
 }
-.form__icon-left {
+.icon-left {
   left: 0;
 }
-.form__icon-right {
+.icon-right {
   right: 0;
-}
-.form__label {
-  color: var(--description);
-  font-size: 16px;
-  font-weight: bold;
-}
-.form__input {
-  background-color: transparent;
-  outline: none;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  height: 32px;
-  padding: 0 40px;
-  color: var(--description);
-  width: 100%;
-}
-.form__input::placeholder {
-  color: var(--description);
-  font-size: 12px;
-  font-weight: 400;
-}
-.form__button {
-  height: 32px;
-  width: 100%;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  margin-top: 16px;
-  text-transform: capitalize;
-  color: var(--title);
-  background-color: var(--primary);
-  border: none;
-  cursor: pointer;
 }
 .sesion__footer {
   display: flex;
@@ -105,14 +50,8 @@
   gap: 16px;
   width: 100%;
 }
-.sesion__footer__text {
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-}
-.sesion__footer__text__link {
-  text-decoration: none;
-  color: var(--title);
+.boton14medium {
+  text-transform: none;
 }
 .signGoogle {
   height: 48px;
