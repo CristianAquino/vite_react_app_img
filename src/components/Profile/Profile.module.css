@@ -1,3 +1,10 @@
+.profile__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
 .changeImage {
   position: relative;
   cursor: pointer;
@@ -13,8 +20,4 @@
   justify-content: center;
   bottom: 12px;
   right: 12px;
-}
-.icon {
-  color: var(--description);
-  font-size: 24px;
 }
