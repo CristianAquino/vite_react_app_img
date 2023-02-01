@@ -32,7 +32,7 @@ export const Register = () => {
           <div className={style.form__container}>
             <span className="tag16bold">Escriba su usuario</span>
             <div className={style.form__containerInput}>
-              <BiUser className={`icon ${style.icon} ${style["icon-left"]}`} />
+              <BiUser className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
                 type="text"
                 placeholder="username"
@@ -44,7 +44,7 @@ export const Register = () => {
             <span className="tag16bold">Ingrese su email</span>
             <div className={style.form__containerInput}>
               <BiEnvelope
-                className={`icon ${style.icon} ${style["icon-left"]}`}
+                className={`icon ${style.icon} ${style["icon--left"]}`}
               />
               <input
                 type="text"
@@ -56,7 +56,7 @@ export const Register = () => {
           <div className={style.form__container}>
             <span className="tag16bold">Ingrese su contraseña</span>
             <div className={style.form__containerInput}>
-              <BiLock className={`icon ${style.icon} ${style["icon-left"]}`} />
+              <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
                 type={lockPassword ? "text" : "password"}
                 placeholder="********************"
@@ -65,12 +65,12 @@ export const Register = () => {
               {lockPassword ? (
                 <BiShow
                   onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               ) : (
                 <BiHide
                   onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]}`}
                 />
               )}
             </div>
@@ -78,7 +78,7 @@ export const Register = () => {
           <div className={style.form__container}>
             <span className="tag16bold">Confirme su contraseña</span>
             <div className={style.form__containerInput}>
-              <BiLock className={`icon ${style.icon} ${style["icon-left"]}`} />
+              <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
                 type={lockConfirmPassword ? "text" : "password"}
                 placeholder="********************"
@@ -87,12 +87,12 @@ export const Register = () => {
               {lockConfirmPassword ? (
                 <BiShow
                   onClick={setLockConfirmPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               ) : (
                 <BiHide
                   onClick={setLockConfirmPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]}`}
                 />
               )}
             </div>

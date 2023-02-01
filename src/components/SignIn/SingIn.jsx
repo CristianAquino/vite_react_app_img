@@ -59,7 +59,7 @@ export const SingIn = () => {
             <span className="tag16bold">Ingrese su email</span>
             <div className={style.form__containerInput}>
               <BiEnvelope
-                className={`icon ${style.icon} ${style["icon-left"]}`}
+                className={`icon ${style.icon} ${style["icon--left"]}`}
               />
               <input
                 type="text"
@@ -74,7 +74,7 @@ export const SingIn = () => {
           <div className={style.form__container}>
             <span className="tag16bold">Ingrese su contraseña</span>
             <div className={style.inputPassSingIn}>
-              <BiLock className={`icon ${style.icon} ${style["icon-left"]}`} />
+              <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
                 type={lockPassword ? "text" : "password"}
                 placeholder="********************"
@@ -86,12 +86,12 @@ export const SingIn = () => {
               {lockPassword ? (
                 <BiShow
                   onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               ) : (
                 <BiHide
                   onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon-right"]}`}
+                  className={`icon ${style.icon} ${style["icon--right"]}`}
                 />
               )}
             </div>
