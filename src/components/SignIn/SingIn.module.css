@@ -36,10 +36,13 @@
   padding: 4px;
   bottom: 0;
 }
-.icon-left {
+.icon--off {
+  color: var(--description) !important;
+}
+.icon--left {
   left: 0;
 }
-.icon-right {
+.icon--right {
   right: 0;
 }
 .sesion__footer {
