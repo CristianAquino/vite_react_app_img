@@ -16,7 +16,7 @@ export const Register = () => {
   return (
     <div className={style.sesion}>
       <div className={style.sesion__head}>
-        <span className={`tag24bold ${style["tag24bold--var"]}`}>registro</span>
+        <h1 className={`tag24bold ${style["tag24bold--var"]}`}>registro</h1>
         <Link className="tag12regular link" to={"/"}>
           ir al inicio
         </Link>

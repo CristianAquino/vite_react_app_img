@@ -47,9 +47,9 @@ export const SingIn = () => {
   return (
     <div className={style.sesion}>
       <div className={style.sesion__head}>
-        <span className={`tag24bold ${style["tag24bold--var"]}`}>
+        <h1 className={`tag24bold ${style["tag24bold--var"]}`}>
           iniciar sesion
-        </span>
+        </h1>
         <Link className="tag12regular link" to={"/"}>
           ir al inicio
         </Link>
