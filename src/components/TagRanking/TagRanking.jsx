@@ -4,23 +4,30 @@ import style from "./TagRanking.module.css";
 import { AiOutlineEye } from "react-icons/ai";
 
 const TagRanking = () => {
-  const sizeImage = {
-    //   height: "100%",
-    //   width: "87px",
+  const styleContainerImage = {
     borderRadius: "4px",
   };
+  const styleTagImage = {
+    objectFit: "cover",
+    objectPosition: "center",
+  };
   return (
-    <div className={style.tagRanking}>
-      <p className={style.tagRanking__number}>#1</p>
-      <Image dimension={sizeImage} />
+    <div className={style.tagRankingContent}>
+      <p className={`tag24bold ${style["tagRanking--number"]}`}>#1</p>
+      <Image
+        styleContainerImage={styleContainerImage}
+        styleTagImage={styleTagImage}
+      />
       <div className={style.tagRankingData}>
-        <p className={style.tagRankingData__title}>
+        <p className={`title16bold ${style["tagRankingData--title"]}`}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
           quidem maiores itaque, adipisci sit veritatis!
         </p>
-        <div className={style.tagRankingData__view}>
-          <AiOutlineEye />
-          <span className={style.tagRankingData__number}>123456 View</span>
+        <div className={style["tagRankingData--view"]}>
+          <AiOutlineEye className={`icon ${style["icon--var"]}`} />
+          <span className={`tag12regular ${style["tag12regular--var"]}`}>
+            123456 View
+          </span>
         </div>
       </div>
     </div>
