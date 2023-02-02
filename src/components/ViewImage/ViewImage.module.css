@@ -1,25 +1,13 @@
 .view {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
-  padding: 16px 0;
   min-height: 100vh;
   width: 100%;
 }
-.view__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  height: auto;
-  width: 100%;
-  padding: 0 16px;
-}
-.view__title {
+.title32bold--var {
   color: var(--title);
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: capitalize;
 }
 .view__controls {
   display: flex;
@@ -27,16 +15,15 @@
   justify-content: center;
   gap: 8px;
 }
-.view__icon {
-  color: var(--icon);
-  font-size: 32px;
-}
 .view__container__select {
   display: flex;
   position: relative;
   gap: 1px;
   justify-content: space-between;
   width: 196px;
+}
+.tag14medium--var {
+  color: var(--icon);
 }
 .view__select {
   border: none;
@@ -61,9 +48,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--icon);
-  font-size: 14px;
-  font-weight: 400;
   border-radius: 8px;
   background-color: var(--end);
 }
