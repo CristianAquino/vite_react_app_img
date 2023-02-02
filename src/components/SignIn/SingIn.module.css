@@ -12,6 +12,9 @@
   align-items: flex-end;
   width: 100%;
 }
+.tag24bold--var {
+  color: var(--title);
+}
 .sesion__body {
   width: 100%;
 }
@@ -28,8 +31,14 @@
   gap: 16px;
   width: 100%;
 }
+.tag16bold--var {
+  color: var(--description);
+}
 .form__containerInput {
   width: 100%;
+}
+.boton14medium--var {
+  color: var(--title);
 }
 .icon {
   position: absolute;
@@ -52,9 +61,6 @@
   justify-content: center;
   gap: 16px;
   width: 100%;
-}
-.boton14medium {
-  text-transform: none;
 }
 .signGoogle {
   height: 48px;
