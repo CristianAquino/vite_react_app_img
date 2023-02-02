@@ -3,23 +3,47 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 const Navigate = () => {
   return (
-    <div className={style.navigate}>
-      <div className={style.navigate__tag}>
+    <div className={style.navigateContent}>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate}`}
+      >
         <AiOutlineLeft />
-      </div>
-      <div className={`${style.navigate__tag} ${style.navigate__active}`}>
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate} ${style["navigate--active"]}`}
+      >
         1
-      </div>
-      <div className={style.navigate__tag}>2</div>
-      <div className={style.navigate__tag}>3</div>
-      <span className={style.navigate__more}>...</span>
-      <div className={style.navigate__tag}>5</div>
-      <div className={`${style.navigate__tag} ${style.navigate__tag__end}`}>
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate}`}
+      >
+        2
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate}`}
+      >
+        3
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style["navigate--more"]}`}
+      >
+        ...
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate}`}
+      >
+        5
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate} ${style["navigate--end"]}`}
+      >
         Fin
-      </div>
-      <div className={style.navigate__tag}>
+      </span>
+      <span
+        className={`tag14medium ${style["tag14medium--var"]} ${style.navigate}`}
+      >
         <AiOutlineRight />
-      </div>
+      </span>
     </div>
   );
 };
