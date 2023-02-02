@@ -6,8 +6,8 @@ import { FcGoogle } from "react-icons/fc";
 import { useChangeIcon } from "../../hooks/useChangeIcon";
 
 export const Register = () => {
-  const [lockPassword, setLockPassword] = useChangeIcon();
-  const [lockConfirmPassword, setLockConfirmPassword] = useChangeIcon();
+  const [unlockPassword, setUnLockPassword] = useChangeIcon();
+  const [unlockConfirmPassword, setUnLockConfirmPassword] = useChangeIcon();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ export const Register = () => {
   return (
     <div className={style.sesion}>
       <div className={style.sesion__head}>
-        <span className="tag24bold">registro</span>
+        <span className={`tag24bold ${style["tag24bold--var"]}`}>registro</span>
         <Link className="tag12regular link" to={"/"}>
           ir al inicio
         </Link>
@@ -26,11 +26,13 @@ export const Register = () => {
         <FcGoogle />
         <span className={style.signGoogle__text}>Sign up with Google</span>
       </div>
-      <span className="tag24bold">- or -</span>
+      <span className={`tag24bold ${style["tag24bold--var"]}`}>- or -</span>
       <div className={style.sesion__body}>
         <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={style.form__container}>
-            <span className="tag16bold">Escriba su usuario</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Escriba su usuario
+            </span>
             <div className={style.form__containerInput}>
               <BiUser className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
@@ -41,7 +43,9 @@ export const Register = () => {
             </div>
           </div>
           <div className={style.form__container}>
-            <span className="tag16bold">Ingrese su email</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Ingrese su email
+            </span>
             <div className={style.form__containerInput}>
               <BiEnvelope
                 className={`icon ${style.icon} ${style["icon--left"]}`}
@@ -54,57 +58,62 @@ export const Register = () => {
             </div>
           </div>
           <div className={style.form__container}>
-            <span className="tag16bold">Ingrese su contraseña</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Ingrese su contraseña
+            </span>
             <div className={style.form__containerInput}>
               <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
-                type={lockPassword ? "text" : "password"}
+                type={unlockPassword ? "text" : "password"}
                 placeholder="********************"
                 className="form__input"
               />
-              {lockPassword ? (
+              {unlockPassword ? (
                 <BiShow
-                  onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
+                  onClick={setUnLockPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]}`}
                 />
               ) : (
                 <BiHide
-                  onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]}`}
+                  onClick={setUnLockPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               )}
             </div>
           </div>
           <div className={style.form__container}>
-            <span className="tag16bold">Confirme su contraseña</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Confirme su contraseña
+            </span>
             <div className={style.form__containerInput}>
               <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
-                type={lockConfirmPassword ? "text" : "password"}
+                type={unlockConfirmPassword ? "text" : "password"}
                 placeholder="********************"
                 className="form__input"
               />
-              {lockConfirmPassword ? (
+              {unlockConfirmPassword ? (
                 <BiShow
-                  onClick={setLockConfirmPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
+                  onClick={setUnLockConfirmPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]}`}
                 />
               ) : (
                 <BiHide
-                  onClick={setLockConfirmPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]}`}
+                  onClick={setUnLockConfirmPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               )}
             </div>
           </div>
-          <button className="form__button  boton14medium">registrarse</button>
+          <button
+            className={`form__button boton14medium ${style["boton14medium--var"]}`}
+          >
+            registrarse
+          </button>
         </form>
       </div>
       <div className={style.sesion__footer}>
-        <Link
-          className={`boton14medium ${style.boton14medium} link`}
-          to={"/login"}
-        >
+        <Link className={`boton14medium link`} to={"/login"}>
           ¿Ya tienes una cuenta? Ingresa ahora.
         </Link>
       </div>

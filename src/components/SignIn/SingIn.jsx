@@ -17,7 +17,7 @@ const initial = {
 
 export const SingIn = () => {
   const [form, setForm] = useState(initial);
-  const [lockPassword, setLockPassword] = useChangeIcon();
+  const [unlockPassword, setUnLockPassword] = useChangeIcon();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,7 +47,9 @@ export const SingIn = () => {
   return (
     <div className={style.sesion}>
       <div className={style.sesion__head}>
-        <span className="tag24bold">iniciar sesion</span>
+        <span className={`tag24bold ${style["tag24bold--var"]}`}>
+          iniciar sesion
+        </span>
         <Link className="tag12regular link" to={"/"}>
           ir al inicio
         </Link>
@@ -56,7 +58,9 @@ export const SingIn = () => {
       <div className={style.sesion__body}>
         <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={style.form__container}>
-            <span className="tag16bold">Ingrese su email</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Ingrese su email
+            </span>
             <div className={style.form__containerInput}>
               <BiEnvelope
                 className={`icon ${style.icon} ${style["icon--left"]}`}
@@ -72,41 +76,44 @@ export const SingIn = () => {
             </div>
           </div>
           <div className={style.form__container}>
-            <span className="tag16bold">Ingrese su contraseña</span>
+            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+              Ingrese su contraseña
+            </span>
             <div className={style.inputPassSingIn}>
               <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
-                type={lockPassword ? "text" : "password"}
+                type={unlockPassword ? "text" : "password"}
                 placeholder="********************"
                 className="form__input"
                 name="password"
                 value={form.password}
                 onChange={handleChange}
               />
-              {lockPassword ? (
+              {unlockPassword ? (
                 <BiShow
-                  onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
+                  onClick={setUnLockPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]} `}
                 />
               ) : (
                 <BiHide
-                  onClick={setLockPassword}
-                  className={`icon ${style.icon} ${style["icon--right"]}`}
+                  onClick={setUnLockPassword}
+                  className={`icon ${style.icon} ${style["icon--right"]} ${style["icon--off"]}`}
                 />
               )}
             </div>
           </div>
-          <button className="form__button boton14medium">iniciar sesion</button>
+          <button
+            className={`form__button boton14medium ${style["boton14medium--var"]}`}
+          >
+            iniciar sesion
+          </button>
         </form>
       </div>
       <div className={style.sesion__footer}>
-        <Link className={`boton14medium ${style.boton14medium} link`} to={"/"}>
+        <Link className={`boton14medium link`} to={"/"}>
           ¿Olvidaste tu contraseña?
         </Link>
-        <Link
-          className={`link boton14medium ${style.boton14medium} `}
-          to={"/register"}
-        >
+        <Link className={`boton14medium link`} to={"/register"}>
           ¿No tienes una cuenta? Cree una ahora.
         </Link>
       </div>
