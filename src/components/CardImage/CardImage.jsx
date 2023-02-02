@@ -5,6 +5,10 @@ import Image from "./Image";
 const CardImage = () => {
   const [hoy, setHoy] = useState(new Date().getDate());
   const [pub, setPub] = useState("");
+
+  const styleContainerImage = {
+    cursor: "pointer",
+  };
   const dato = {
     f: "12/01/2020",
     e: "",
@@ -18,19 +22,27 @@ const CardImage = () => {
   const handleState = (dato) => {
     const { f, e } = dato;
     if ((e !== "end") & (hoy <= pub)) {
-      return <p className={style.imageContainer__msg}>New</p>;
+      return (
+        <p
+          className={`tag8bold ${style["tag8bold--var"]} ${style["tag8bold--new"]}`}
+        >
+          Nuevo
+        </p>
+      );
     } else if (e === "end") {
-      return <p className={style.imageContainer__msg}>Completo</p>;
+      return <p className={`tag8bold ${style["tag8bold--var"]}`}>Completo</p>;
     }
   };
 
   return (
-    <Image>
-      <p className={style.imageContainer__chapter}>Chapter 101</p>
+    <Image styleContainerImage={styleContainerImage}>
+      <p className={`tag12regular ${style["tag12regular--chapter"]}`}>
+        Chapter 101
+      </p>
       <div
-        className={`${style.imageContainer__state} ${
-          hoy <= pub ? style.imageContainer__new : ""
-        } ${dato.e === "end" ? style.imageContainer__end : ""}`}
+        className={`${style.stateFolder} ${
+          hoy <= pub ? `${style["stateFolder--new"]}` : ""
+        } ${dato.e === "end" ? `${style["stateFolder--end"]}` : ""}`}
       >
         {/* {hoy <= pub ? <p>New</p> : <p>Completo</p>} */}
         {handleState(dato)}
