@@ -10,7 +10,6 @@ export const useEditInput = () => {
 
   const handleReferenceInput = () => {
     const currentInput = referenceInput.current;
-    console.log(currentInput);
     if (changeIcon) {
       currentInput.removeAttribute("disabled");
       currentInput.focus();
