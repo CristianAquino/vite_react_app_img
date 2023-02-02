@@ -18,16 +18,18 @@ const CardData = () => {
 
   return (
     <div className={style.cardData}>
-      <p className={style.cardData__title}>
+      <p
+        className={`title16bold ${style["title16bold--var"]} ${style.cardData__title}`}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
         ratione.
       </p>
       {chapters.map((chapter) => {
         const pub = chapter.f.split("/")[0];
         return (
-          <div className={style.ch} key={chapter.id}>
-            <p className={style["ch--first"]}>{chapter.ch}</p>
-            <p className={hoy <= pub ? style["ch--second"] : style["ch--date"]}>
+          <div className={style.chContainer} key={chapter.id}>
+            <p className={style.ch}>{chapter.ch}</p>
+            <p className={hoy <= pub ? style["ch--new"] : style["ch--date"]}>
               {hoy <= pub ? "New" : chapter.f}
             </p>
           </div>
