@@ -1,57 +1,51 @@
-.imageContainer {
+.containerImage {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  filter: saturate(1.5);
   /* height: 239px;
   width: 191px;
   width: 100%; */
 }
-.imageContainer__image {
+.tagImage {
   width: 100%;
-  /* position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
-  height: auto;
-  object-position: center;
-  object-fit: cover; */
+  filter: saturate(2);
 }
-.imageContainer__chapter {
+.tag12regular--chapter {
   position: absolute;
   right: 8px;
   bottom: 8px;
-  padding: 4px 8px 4px 8px;
-  font-size: 12px;
-  font-weight: 400;
+  padding: 4px 8px;
   background-color: var(--primary);
   color: var(--title);
   border-radius: 8px;
+  cursor: auto !important;
 }
-.imageContainer__state {
+.stateFolder {
   position: absolute;
   left: 0;
   top: 0;
-  font-weight: bold;
-  color: var(--title);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.imageContainer__new {
+.stateFolder--new {
   border-top: 24px solid var(--new);
   border-right: 24px solid transparent;
   border-bottom: 24px solid transparent;
   border-left: 24px solid var(--new);
 }
-.imageContainer__end {
+.stateFolder--end {
   border-top: 24px solid var(--end);
   border-right: 24px solid transparent;
   border-bottom: 24px solid transparent;
   border-left: 24px solid var(--end);
 }
-.imageContainer__msg {
+.tag8bold--var {
   position: absolute;
-  font-size: 8px;
+  color: var(--title);
   transform: rotate(-45deg) translate(0%, -100%);
+}
+.tag8bold--new {
+  font-size: 10px !important;
 }
