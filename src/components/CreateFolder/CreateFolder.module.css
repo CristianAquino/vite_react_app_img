@@ -1,0 +1,121 @@
+.folder {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+  width: 100%;
+}
+.tag24bold--var {
+  color: var(--title);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.txtArea {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.folderTxtArea {
+  width: 100%;
+  height: 0px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px;
+  padding-bottom: 24px;
+  resize: none;
+  overflow-y: hidden;
+}
+.lengthTxt {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: var(--border);
+}
+.folderTxtArea--title {
+  color: var(--title);
+}
+.folderTxtArea--sumary {
+  color: var(--description);
+}
+.folderTxtArea::placeholder {
+  color: var(--description);
+  text-transform: initial !important;
+}
+.folderTxtArea:focus {
+  border: 1px solid var(--primary);
+  background-color: rgba(0, 123, 255, 0.1);
+}
+.content__image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  height: 500px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.title32bold--var {
+  color: var(--description);
+}
+.icon--var {
+  color: var(--description) !important;
+  font-size: 128px !important;
+}
+.folder__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.folder__tag {
+  width: 100%;
+  gap: 8px;
+  display: grid;
+  grid-template-columns: 32px 40% 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+.tag14medium--var {
+  color: var(--title);
+}
+.folderSumary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.folderSumary__head {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.folderSumary__head::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--border);
+}
+.boton14medium--var {
+  color: var(--title);
+}
+.form__input--var {
+  padding: 4px !important;
+}
