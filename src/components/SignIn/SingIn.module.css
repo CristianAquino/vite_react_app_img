@@ -25,16 +25,20 @@
   width: 100%;
 }
 .form__container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
+  gap: 16px; */
   position: relative;
-  gap: 16px;
   width: 100%;
+}
+.form__titleInput {
+  margin-bottom: 16px;
 }
 .tag16bold--var {
   color: var(--description);
 }
 .form__containerInput {
+  position: relative;
   width: 100%;
 }
 .boton14medium--var {
