@@ -20,24 +20,53 @@
   --stars: #fce700;
   --going: #54b435;
   --ranking: #414141;
+  --danger: #dc3545;
 }
 /* font */
-.tag24bold {
-  font-size: 24px;
-  text-transform: uppercase;
+/* modificar para solo considerar size, weight, transform */
+.tag8bold {
+  font-size: 8px;
   font-weight: bold;
-  color: var(--title);
+  text-transform: capitalize;
 }
 .tag12regular {
   font-size: 12px;
   font-weight: 400;
   text-transform: capitalize;
-  cursor: pointer;
+}
+.tag14medium {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .tag16bold {
   font-size: 16px;
   font-weight: bold;
-  color: var(--description);
+}
+.tag16medium {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.tag24bold {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.title16bold {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.title32bold {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.description14medium {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .form__button {
   height: 32px;
@@ -52,7 +81,6 @@
   font-size: 14px;
   font-weight: 500;
   text-transform: capitalize;
-  color: var(--title);
 }
 /* input */
 .form__input {
@@ -65,17 +93,28 @@
   color: var(--description);
   width: 100%;
 }
+.form__input:focus {
+  border: 1px solid var(--primary);
+  background-color: rgba(0, 123, 255, 0.1);
+}
 .form__input::placeholder {
-  color: var(--description);
   font-size: 12px;
   font-weight: 400;
+  color: var(--description);
 }
 /* icon */
 .icon {
-  color: var(--icon);
   font-size: 32px;
+  color: var(--icon);
 }
+/* link */
 .link {
   text-decoration: none;
   color: var(--icon);
+}
+/* alert */
+.danger {
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 400;
 }
