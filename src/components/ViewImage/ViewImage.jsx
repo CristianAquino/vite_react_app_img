@@ -1,84 +1,52 @@
-import Image from "../CardImage/Image";
 import style from "./ViewImage.module.css";
+import Image from "../CardImage/Image";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { chapterwithfolderId } from "../../https/chapterRequest";
+import { chapterSuccess } from "../../redux/slices/chapterSlice";
 
-import {
-  AiOutlineHome,
-  AiOutlineLike,
-  AiOutlineLeft,
-  AiOutlineRight,
-  AiOutlineLeftCircle,
-} from "react-icons/ai";
+export const ViewImage = () => {
+  const params = useParams();
+  const { chapters } = useSelector((state) => state.chapterSlice);
+  const dispatch = useDispatch();
 
-const ViewImage = () => {
+  const chapter = chapters?.chapters.find(
+    (chapter) => chapter.name === params.chapterName
+  );
+
+  useEffect(() => {
+    chapterwithfolderId(params.folderName).then((res) =>
+      dispatch(chapterSuccess(res))
+    );
+  }, []);
+
   const styleContainerImage = {
     borderRadius: 0,
   };
   const styleTagImage = {
     verticalAlign: "middle",
   };
+
   return (
-    <div className={style.view}>
-      <div className={`title32bold ${style["title32bold--var"]}`}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum,
-        temporibus?
-      </div>
-      <div className={style.view__controls}>
-        <AiOutlineHome className="icon" />
-        <AiOutlineLeftCircle className="icon" />
-        <div className={style.view__container__select}>
-          <div
-            className={`tag14medium ${style["tag14medium--var"]} ${style.view__arrow}`}
-          >
-            <AiOutlineLeft />
-          </div>
-          <select name="" className={style.view__select}>
-            <option value="3">Chapter 3</option>
-            <option value="2">Chapter 2</option>
-            <option value="1">Chapter 1</option>
-          </select>
-          <div
-            className={`tag14medium ${style["tag14medium--var"]} ${style.view__arrow}`}
-          >
-            <AiOutlineRight />
-          </div>
-        </div>
-        <AiOutlineLike className="icon" />
-      </div>
-      <div className={style.view__body}>
+    <div className={style.view__body}>
+      {chapter?.images.map((img) => (
         <Image
+          key={img}
           styleContainerImage={styleContainerImage}
           styleTagImage={styleTagImage}
+          url={img}
         />
-        <Image
-          styleContainerImage={styleContainerImage}
-          styleTagImage={styleTagImage}
-        />
-        <Image
-          styleContainerImage={styleContainerImage}
-          styleTagImage={styleTagImage}
-        />
-      </div>
-      <div className={style.view__footer}>
-        <div className={style.view__container__select}>
-          <div
-            className={`tag14medium ${style["tag14medium--var"]} ${style.view__arrow}`}
-          >
-            <AiOutlineLeft />
-          </div>
-          <select name="" className={style.view__select}>
-            <option value="3">Chapter 3</option>
-            <option value="2">Chapter 2</option>
-            <option value="1">Chapter 1</option>
-          </select>
-          <div
-            className={`tag14medium ${style["tag14medium--var"]} ${style.view__arrow}`}
-          >
-            <AiOutlineRight />
-          </div>
-        </div>
-      </div>
+      ))}
+
+      {/* <Image
+        styleContainerImage={styleContainerImage}
+        styleTagImage={styleTagImage}
+      />
+      <Image
+        styleContainerImage={styleContainerImage}
+        styleTagImage={styleTagImage}
+      /> */}
     </div>
   );
 };
-
-export default ViewImage;
