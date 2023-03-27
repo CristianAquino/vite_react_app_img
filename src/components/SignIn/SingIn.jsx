@@ -1,38 +1,47 @@
+import { useEffect } from "react";
+// style
 import style from "./SingIn.module.css";
+// react-router-dom
 import { Link, useNavigate } from "react-router-dom";
+// component
 import Logo from "../Logo/Logo";
+// icons
 import { BiLock, BiEnvelope, BiShow, BiHide } from "react-icons/bi";
-import { useEffect, useState } from "react";
+// http
 import { signin } from "../../https/authRequests";
-
+// redux
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { loginSuccess } from "../../redux/slices/authSlice";
+import {
+  authStart,
+  loginSuccess,
+  authFail,
+} from "../../redux/slices/authSlice";
+import { userSuccess } from "../../redux/slices/userSlice";
+// hook
 import { useChangeIcon } from "../../hooks/useChangeIcon";
-
-const initial = {
-  email: "",
-  password: "",
-};
+// react-hook-form
+import { useForm } from "react-hook-form";
 
 export const SingIn = () => {
-  const [form, setForm] = useState(initial);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   const [unlockPassword, setUnLockPassword] = useChangeIcon();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isLogged } = useSelector((state) => state.authSlice);
-
-  const handleLogin = () => {
-    signin(form)
-      .then((res) => dispatch(loginSuccess(res)))
-      .catch((e) => console.log(e));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleLogin();
-  };
+  const { isLogged, error, message, loading } = useSelector(
+    (state) => state.authSlice
+  );
 
   useEffect(() => {
     if (isLogged) {
@@ -40,9 +49,28 @@ export const SingIn = () => {
     }
   }, [isLogged]);
 
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const onSubmit = (datos) => {
+    handleLogin(datos);
   };
+
+  const handleLogin = async (datos) => {
+    dispatch(authStart());
+    try {
+      const res = await signin(datos);
+      dispatch(loginSuccess(res.token));
+      dispatch(userSuccess(res.user));
+    } catch (e) {
+      dispatch(authFail(e.response.data));
+    }
+  };
+
+  // const handleChange = (e) => {
+  //   setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  // };
+
+  // if (loading) {
+  //   return <h1 style={{ minHeight: "100vh" }}>Cargando...</h1>;
+  // }
 
   return (
     <div className={style.sesion}>
@@ -56,38 +84,53 @@ export const SingIn = () => {
       </div>
       <Logo />
       <div className={style.sesion__body}>
-        <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
-          <div className={style.form__container}>
-            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={style.form}
+          autoComplete="off"
+        >
+          <div className={`${style.form__container} `}>
+            <p
+              className={`tag16bold ${style["tag16bold--var"]} ${style.form__titleInput}`}
+            >
               Ingrese su email
-            </span>
+            </p>
             <div className={style.form__containerInput}>
               <BiEnvelope
                 className={`icon ${style.icon} ${style["icon--left"]}`}
               />
               <input
-                type="text"
+                type="email"
                 placeholder="jhondoe@example.com"
                 className="form__input"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
+                {...register("email", {
+                  required: "*Este campo es requerido",
+                  pattern: {
+                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$/,
+                    message: "Debe ingresar un email valido",
+                  },
+                })}
               />
             </div>
+            {errors.email && (
+              <span className="danger">{errors.email?.message}</span>
+            )}
           </div>
           <div className={style.form__container}>
-            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+            <p
+              className={`tag16bold ${style["tag16bold--var"]} ${style.form__titleInput}`}
+            >
               Ingrese su contraseña
-            </span>
-            <div className={style.inputPassSingIn}>
+            </p>
+            <div className={style.form__containerInput}>
               <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
                 type={unlockPassword ? "text" : "password"}
                 placeholder="********************"
                 className="form__input"
-                name="password"
-                value={form.password}
-                onChange={handleChange}
+                {...register("password", {
+                  required: "*Este campo es requerido",
+                })}
               />
               {unlockPassword ? (
                 <BiShow
@@ -101,7 +144,11 @@ export const SingIn = () => {
                 />
               )}
             </div>
+            {errors.password && (
+              <span className="danger">{errors.password?.message}</span>
+            )}
           </div>
+          {error && <span className="danger">{message}</span>}
           <button
             className={`form__button boton14medium ${style["boton14medium--var"]}`}
           >
