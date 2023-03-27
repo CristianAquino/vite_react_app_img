@@ -8,6 +8,8 @@
 .changeImage {
   position: relative;
   cursor: pointer;
+  height: 192px;
+  width: 192px;
 }
 .changeImage__iconContainer {
   position: absolute;
@@ -20,4 +22,10 @@
   justify-content: center;
   bottom: 12px;
   right: 12px;
+}
+.tag16bold--var {
+  color: var(--description);
+}
+.form__titleInput {
+  margin-bottom: 16px;
 }
