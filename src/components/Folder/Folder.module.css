@@ -25,6 +25,7 @@
   color: var(--stars);
   cursor: pointer;
 }
+.iconFollowT,
 .iconFollow:hover {
   color: var(--primary);
   cursor: pointer;
@@ -60,11 +61,17 @@
 .tag14medium--var {
   color: var(--title);
 }
-.tag14medium--var__color {
+.tag14medium--var__colorG {
   width: 100px;
   padding: 8px;
   border-radius: 4px;
   background-color: var(--going);
+}
+.tag14medium--var__colorE {
+  width: 100px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--end);
 }
 .folderSumary {
   width: 100%;
