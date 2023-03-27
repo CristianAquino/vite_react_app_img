@@ -6,6 +6,7 @@ import Image from "../CardImage/Image";
 
 import { useEditInput } from "../../hooks/useEditInput";
 import Avatar from "../Avatar/Avatar";
+import { useSelector } from "react-redux";
 
 export const Profile = () => {
   const [changeIconUsernameEdit, refUsername, LockInputUsername] =
@@ -14,7 +15,7 @@ export const Profile = () => {
   const [changeIconPasswordEdit, refPassword, LockInputPassword] =
     useEditInput();
 
-  const value = true;
+  const { user } = useSelector((state) => state.userSlice);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +33,11 @@ export const Profile = () => {
     objectPosition: "center",
   };
 
+  const styleAvatar = {
+    fontSize: "50px",
+    backgroundColor: `${user.avatar.bg}`,
+  };
+
   return (
     <div className={style.sesion}>
       <div className={style.sesion__head}>
@@ -41,23 +47,26 @@ export const Profile = () => {
       </div>
       <div className={stProfile.profile__body}>
         <div className={stProfile.changeImage}>
-          {value ? (
+          {user.urlAvatar ? (
             <Image
               styleContainerImage={styleContainerImage}
               styleTagImage={styleTagImage}
+              url={user.urlAvatar}
             />
           ) : (
-            <Avatar />
+            <Avatar styleAvatar={styleAvatar} name={user.username} />
           )}
           <p className={stProfile.changeImage__iconContainer}>
             <TbCameraPlus className={`icon ${style.icon} `} />
           </p>
         </div>
-        <form className={style.form} onSubmit={handleSubmit}>
+        <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={style.form__container}>
-            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+            <p
+              className={`tag16bold ${style["tag16bold--var"]} ${style.form__titleInput}`}
+            >
               Nombre de usuario
-            </span>
+            </p>
             <div className={style.form__containerInput}>
               <BiUser className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
@@ -81,9 +90,11 @@ export const Profile = () => {
             </div>
           </div>
           <div className={style.form__container}>
-            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+            <p
+              className={`tag16bold ${style["tag16bold--var"]} ${style.form__titleInput}`}
+            >
               Correo electronico
-            </span>
+            </p>
             <div className={style.form__containerInput}>
               <BiEnvelope
                 className={`icon ${style.icon} ${style["icon--left"]}`}
@@ -109,9 +120,11 @@ export const Profile = () => {
             </div>
           </div>
           <div className={style.form__container}>
-            <span className={`tag16bold ${style["tag16bold--var"]}`}>
+            <p
+              className={`tag16bold ${style["tag16bold--var"]} ${style.form__titleInput}`}
+            >
               Contraseña
-            </span>
+            </p>
             <div className={style.form__containerInput}>
               <BiLock className={`icon ${style.icon} ${style["icon--left"]}`} />
               <input
