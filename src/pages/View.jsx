@@ -1,7 +1,7 @@
-import ViewImage from "../components/ViewImage/ViewImage";
+import ViewContent from "../components/ViewImage/ViewContent";
 
 const View = () => {
-  return <ViewImage />;
+  return <ViewContent />;
 };
 
 export default View;
