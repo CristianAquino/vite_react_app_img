@@ -15,9 +15,38 @@
   font-size: 32px;
   color: var(--icon);
 }
-
-@media (min-width: 430px) {
-  .icon {
-    display: none;
-  }
+/* search */
+.formSearch {
+  width: 60%;
+  display: flex;
+}
+.form__input--var {
+  border-radius: 5px 0 0 5px !important;
+  padding: 0 8px !important;
+}
+/* acceder */
+.link--var {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--ch);
+  border-radius: 8px;
+  color: var(--primary) !important;
+}
+.icon--var {
+  font-size: 24px !important;
+  color: var(--primary) !important;
+}
+.icon__search {
+  font-size: 24px !important;
+}
+/* button */
+.form__button--var {
+  margin-top: 0 !important;
+  width: 64px !important;
+  border-radius: 0 4px 4px 0 !important;
+  background-color: var(--secondary) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 0 !important;
 }
